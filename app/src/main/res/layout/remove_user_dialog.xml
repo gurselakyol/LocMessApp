@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_custom_dialog">
+
+    <RelativeLayout
+        android:id="@+id/remove_user_dialog_photo_relative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/remove_user_dialog_photo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/defaultprofilephoto"
+            android:contentDescription="@string/user_photo"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/remove_user_dialog_warning_relative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/remove_user_dialog_photo_relative"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/remove_user_dialog_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/remove_user_dialog_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/warning_text"
+            android:textSize="15sp"
+            android:textColor="@color/gray_color"
+            android:layout_below="@id/remove_user_dialog_username"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/remove_user_dialog_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@id/remove_user_dialog_warning_relative"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/remove_user_dialog_line">
+
+        <Button
+            android:id="@+id/remove_user_dialog_remove_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:text="@string/remove_text"
+            android:textAllCaps="false"/>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"/>
+
+        <Button
+            android:id="@+id/remove_user_dialog_cancel_button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:text="@string/cancel_text"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

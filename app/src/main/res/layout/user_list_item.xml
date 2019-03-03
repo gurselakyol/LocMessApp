@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/user_list_item_relative"
+    android:background="@color/white_color">
+
+    <ImageView
+        android:id="@+id/user_list_item_photo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/defaultprofilephoto"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/user_photo"/>
+
+    <RelativeLayout
+        android:id="@+id/user_list_item_name_relative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/user_list_item_photo">
+
+        <TextView
+            android:id="@+id/user_list_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_text"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/black_color"/>
+
+        <TextView
+            android:id="@+id/user_list_item_surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/surname_text"
+            android:layout_marginStart="5dp"
+            android:textSize="18sp"
+            android:textColor="@color/black_color"
+            android:layout_toEndOf="@id/user_list_item_name"/>
+
+        <TextView
+            android:id="@+id/user_list_item_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            android:layout_marginStart="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/gray_color"
+            android:layout_below="@id/user_list_item_name"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/user_list_buttons_relative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="RelativeOverlap">
+
+        <RelativeLayout
+            android:id="@+id/user_list_button_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp">
+
+            <!--Choose people fragment / select remove buttons-->
+
+            <Button
+                android:id="@+id/user_list_item_select_button"
+                android:text="@string/select_text"
+                android:background="@drawable/background_border_with_primary_dark_color"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/white_color"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/user_list_item_remove_button"
+                android:text="@string/remove_text"
+                android:background="@drawable/background_border_color_primary"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone"/>
+
+            <!--Followers / Following activity - buttons-->
+
+            <Button
+                android:id="@+id/user_list_item_follow_button"
+                android:text="@string/follow_text"
+                android:background="@drawable/background_border_with_primary_dark_color"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/white_color"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/user_list_item_unfollow_button"
+                android:text="@string/unfollow_text"
+                android:background="@drawable/background_border_color_primary"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="13sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/user_list_item_option_button"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_vert_grey_24dp"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            android:layout_toEndOf="@id/user_list_button_holder"
+            android:contentDescription="@string/options_vertical_three_dots"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
