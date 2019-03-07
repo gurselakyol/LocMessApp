@@ -11,6 +11,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -115,6 +116,10 @@ public class MessageDetailsActivity extends AppCompatActivity implements OnItemC
                 myDialog.dismiss();
             }
         });
+
+        Button followButton = myDialog.findViewById(R.id.user_info_dialog_follow_button);
+        followButton.setVisibility(View.VISIBLE);
+        Button unfollowButton = myDialog.findViewById(R.id.user_info_dialog_unfollow_button);
 
         Objects.requireNonNull(myDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.setCancelable(false);
