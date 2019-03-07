@@ -3,6 +3,6 @@
     <!-- This is the stroke you want to define -->
     <corners android:radius="5dp" />
 
-    <solid android:color="@color/colorPrimaryDark" />
+    <solid android:color="@color/warning_color" />
 
 </shape>

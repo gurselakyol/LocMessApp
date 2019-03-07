@@ -27,6 +27,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         searchEdittext = findViewById(R.id.search_edit_text);
+        searchEdittext.requestFocus();
 
     }
 

@@ -21,7 +21,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,6 +38,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     NavigationView leftMenu;
     ImageButton actionBarButton;
     DrawerLayout drawer;
+    LinearLayout settingsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         drawer = findViewById(R.id.drawer_layout);
         leftMenu = findViewById(R.id.leftmenu);
         actionBarButton= findViewById(R.id.drawer_button);
-        final EditText editText = findViewById(R.id.leave_message_edittext);
+        final TextView textView = findViewById(R.id.leave_message_edittext);
+        settingsButton = findViewById(R.id.navbar_settings_button);
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapsActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         leftMenu.setNavigationItemSelectedListener(this);
 
@@ -79,18 +89,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        //prevent keyboard open
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-
-        //edit text onClick
-        editText.setOnClickListener(new View.OnClickListener() {
+        //textView onClick
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MapsActivity.this, WriteMessageActivity.class);
                 ActivityOptionsCompat optionsCompat = ActivityOptionsCompat
                         .makeSceneTransitionAnimation(
-                                MapsActivity.this, editText,
-                                Objects.requireNonNull(ViewCompat.getTransitionName(editText))
+                                MapsActivity.this, textView,
+                                Objects.requireNonNull(ViewCompat.getTransitionName(textView))
                         );
                 startActivity(intent, optionsCompat.toBundle());
             }
@@ -101,7 +108,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         actionBarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                drawer.openDrawer(Gravity.LEFT);
+                drawer.openDrawer(Gravity.START);
             }
         });
 
@@ -156,7 +163,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onBackPressed() {
         if(drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(Gravity.LEFT);
+            drawer.closeDrawer(Gravity.START);
         }else{
             finish();
         }
